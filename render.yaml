@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: water-can-tracker
+    runtime: docker
+    healthCheckPath: /api/health
+    envVars:
+      - key: DATA_DIR
+        value: /app/data
+    disk:
+      name: water-can-data
+      mountPath: /app/data
+      sizeGB: 1
